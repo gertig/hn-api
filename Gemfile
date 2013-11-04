@@ -38,13 +38,13 @@ gem "nokogiri"
 gem "versionist", "~> 1.1.0" # My favorite API creation and versioning tool
 gem "redis", "~> 3.0.4" # "~> 2.2.2" # Add the following to config/application.rb: config.gem 'redis'
 
-gem "twilio-ruby" # Twilio
+gem "twilio-ruby"
 
 gem "sidekiq", "~> 2.12.4"
 
 # HTTP Requests
 # gem "faraday"
 # gem "faraday_middleware"
-gem "domainatrix" # Working with urls
+# gem "domainatrix" # Working with urls
 
 
