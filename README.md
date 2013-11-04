@@ -1,9 +1,12 @@
-== README
+== Getting Started
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+$ gem install bunder
+$ gem install foreman
 
-Things you may want to cover:
+Start Postgres
+
+$ rake db:setup
+$ 
 
 * Ruby version
 

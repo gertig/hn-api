@@ -25,10 +25,13 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
+    addressable (2.3.5)
     arel (4.0.0)
     atomic (1.1.14)
     bcrypt-ruby (3.0.1)
     builder (3.1.4)
+    celluloid (0.15.2)
+      timers (~> 1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -36,6 +39,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    connection_pool (1.1.0)
+    domainatrix (0.0.11)
+      addressable
     erubis (2.7.0)
     execjs (2.0.2)
     hike (1.2.3)
@@ -81,6 +87,8 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     redis (3.0.5)
+    redis-namespace (1.3.2)
+      redis (~> 3.0.4)
     sass (3.2.12)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -91,6 +99,12 @@ GEM
       rdoc (~> 3.10)
     sextant (0.2.4)
       rails (>= 3.2)
+    sidekiq (2.12.4)
+      celluloid (>= 0.14.1)
+      connection_pool (>= 1.0.0)
+      json
+      redis (>= 3.0)
+      redis-namespace
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -104,6 +118,7 @@ GEM
     thread_safe (0.1.3)
       atomic
     tilt (1.4.1)
+    timers (1.1.0)
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
@@ -130,6 +145,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   coffee-rails (~> 4.0.0)
+  domainatrix
   jquery-rails
   nokogiri
   pg
@@ -139,6 +155,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.0)
   sdoc
   sextant
+  sidekiq (~> 2.12.4)
   twilio-ruby
   uglifier (>= 1.3.0)
   unicorn
