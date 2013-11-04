@@ -1,4 +1,5 @@
-== Getting Started
+Getting Started
+---------------
 
 $ gem install bunder
 
@@ -28,6 +29,6 @@ REDISTOGO_URL=redis://localhost:6379
 
 $ foreman run console
 
-> Hn.scrape_hn
+\> Hn.scrape_hn
 
 <http://localhost:5050/hn?version=v1>
