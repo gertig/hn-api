@@ -27,7 +27,7 @@ REDISTOGO_URL=redis://localhost:6379
 
 ```
 
-$ foreman run console
+$ foreman run rails console
 
 \> Hn.scrape_hn
 
