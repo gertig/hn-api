@@ -1,4 +1,4 @@
-Take a look at hn.rb for all the UNTESTED magic. Sorry didn't write this with big plans originally. Still trying to form a testing habit. There is plenty of room for refactoring here.
+Take a look at hn.rb for all the UNTESTED magic. Sorry, but I didn't originally write this with big plans. Still trying to form a testing habit. There is plenty of room for refactoring here.
 
 
 Getting Started
