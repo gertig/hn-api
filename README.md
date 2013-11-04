@@ -7,6 +7,8 @@ $ gem install foreman
 
 Start Postgres (not actually using it so may remove it eventually. Unless we switch off of Redis to something like DJ)
 
+$ bundle
+
 $ rake db:setup
 
 I am using a .env for ENV variables and Foreman to start the party via a Procfile.
