@@ -1,31 +1,33 @@
 == Getting Started
 
 $ gem install bunder
+
 $ gem install foreman
 
-Start Postgres
+Start Postgres (not actually using it so may remove it eventually. Unless we switch off of Redis to something like DJ)
 
 $ rake db:setup
-$ 
 
-* Ruby version
+I am using a .env for ENV variables and Foreman to start the party via a Procfile.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+$ foreman start
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Example .env file
+
+```
+
+RACK_ENV=development
+PORT=5050
+
+SECRET_TOKEN=REALLY-long-STRING
+
+REDISTOGO_URL=redis://localhost:6379
+
+```
+
+$ foreman run console
+
+> Hn.scrape_hn
+
+<http://localhost:5050/hn?version=v1>
