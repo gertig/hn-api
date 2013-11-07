@@ -31,11 +31,9 @@ gem "unicorn"
 group :development do
   gem "quiet_assets" #Gets the junk out of the console
   gem "sextant" #rails/routes
+  gem 'capistrano'
+	gem 'rvm-capistrano'
 end
-
-
-gem 'capistrano'
-gem 'rvm-capistrano'
 
 # Scraping
 gem "nokogiri"

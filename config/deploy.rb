@@ -35,24 +35,32 @@ require "rvm/capistrano"
 
 # default_run_options[:shell] = 'bash'
 # set :rvm_ruby_string, "ruby-1.9.3-p429"
-set :rvm_type, :user
+# set :rvm_type, :user
 # set :bundle_cmd, 'source $HOME/.bash_profile && bundle'
+
+set :rvm_type, :system
 
 ########
 
 server "198.199.87.92", :web, :app, :db, primary: true
 
 set :application, "hn-api"
-set :user, "root"
+set :user, "rails"
+set :password, ENV["DO_PASSWORD"]
 set :port, 22
 # set :deploy_to, "/home/#{user}/apps/#{application}"
-set :deploy_to, "/home/rails"
-set :deploy_via, :remote_cache
+set :deploy_to, "/home/rails/"
+# set :deploy_via, :remote_cache
+set :deploy_via, :copy
 set :use_sudo, false
 
 set :scm, "git"
 set :repository, "git@github.com:gertig/#{application}.git"
 set :branch, "master"
+
+set :normalize_asset_timestamps, false
+
+
 
 
 default_run_options[:pty] = true
