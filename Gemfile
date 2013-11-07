@@ -25,13 +25,17 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem "pg" #, "~> 0.13.2" #, "~> 0.10.1"
+# gem "pg" #, "~> 0.13.2" #, "~> 0.10.1"
 gem "unicorn"
 
 group :development do
   gem "quiet_assets" #Gets the junk out of the console
   gem "sextant" #rails/routes
 end
+
+
+gem 'capistrano'
+gem 'rvm-capistrano'
 
 # Scraping
 gem "nokogiri"
