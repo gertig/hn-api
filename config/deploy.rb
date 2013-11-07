@@ -46,7 +46,7 @@ server "198.199.87.92", :web, :app, :db, primary: true
 
 set :application, "hn-api"
 set :user, "rails"
-set :password, ENV["DO_PASSWORD"]
+# set :password, ENV["DO_PASSWORD"]
 set :port, 22
 # set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_to, "/home/rails/"
