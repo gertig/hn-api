@@ -26,17 +26,17 @@
 
 require "bundler/capistrano"
 
-$:.unshift(File.expand_path("./lib", ENV["rvm_path"]))
+# $:.unshift(File.expand_path("./lib", ENV["rvm_path"]))
 
 require "rvm/capistrano"
 
 
 ###########
 
-default_run_options[:shell] = 'bash'
-set :rvm_ruby_string, "ruby-1.9.3-p429"
+# default_run_options[:shell] = 'bash'
+# set :rvm_ruby_string, "ruby-1.9.3-p429"
 set :rvm_type, :user
-set :bundle_cmd, 'source $HOME/.bash_profile && bundle'
+# set :bundle_cmd, 'source $HOME/.bash_profile && bundle'
 
 ########
 
@@ -45,7 +45,8 @@ server "198.199.87.92", :web, :app, :db, primary: true
 set :application, "hn-api"
 set :user, "root"
 set :port, 22
-set :deploy_to, "/home/#{user}/apps/#{application}"
+# set :deploy_to, "/home/#{user}/apps/#{application}"
+set :deploy_to, "/home/rails"
 set :deploy_via, :remote_cache
 set :use_sudo, false
 
