@@ -5,7 +5,7 @@ server "162.243.71.212", :web, :app, :db, primary: true
 
 set :application, "hnapi"
 set :user, "depoyer"
-set :port, 22
+set :port, 1026
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
