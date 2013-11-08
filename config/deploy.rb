@@ -44,7 +44,7 @@ set :rvm_type, :system
 
 server "198.199.87.92", :web, :app, :db, primary: true
 
-set :application, "hnapi"
+set :application, "hackerbar.mohawkapps.com"
 set :user, "rails"
 # set :password, ENV["DO_PASSWORD"]
 set :port, 22
@@ -57,6 +57,8 @@ set :use_sudo, false
 set :scm, "git"
 set :repository, "git@github.com:gertig/hn-api.git"
 set :branch, "master"
+
+set :rails_env, "production"
 
 set :normalize_asset_timestamps, false
 
