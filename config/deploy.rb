@@ -44,7 +44,7 @@ set :rvm_type, :system
 
 server "198.199.87.92", :web, :app, :db, primary: true
 
-set :application, "hn-api"
+set :application, "hnapi"
 set :user, "rails"
 # set :password, ENV["DO_PASSWORD"]
 set :port, 22
@@ -55,7 +55,7 @@ set :deploy_via, :copy
 set :use_sudo, false
 
 set :scm, "git"
-set :repository, "git@github.com:gertig/#{application}.git"
+set :repository, "git@github.com:gertig/hn-api.git"
 set :branch, "master"
 
 set :normalize_asset_timestamps, false
@@ -81,7 +81,7 @@ namespace :deploy do
     sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
     puts "CREATE the SHARED CONFIG FOLDER"
     run "mkdir -p #{shared_path}/config"
-    
+
     put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
     puts "Now edit the config files in #{shared_path}."
   end
