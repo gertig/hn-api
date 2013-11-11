@@ -22,3 +22,4 @@ latest.dump
 dump.rdb
 *.sql
 .sass-cache/
+/db/database.yml
