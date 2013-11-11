@@ -22,6 +22,9 @@ class Hn
   end
 
   
+  def last_updated
+    $redis.get('last_update').to_i || 0
+  end
   def self.scrape(url)
     return Nokogiri::HTML(open(url).read) #using .read on the open call returns properly encoded UTF-8 for special characters like &eacute;
   end
@@ -120,6 +123,7 @@ class Hn
       }.to_json)
     end
     
+    $redis.set("last_update", Time.now.to_i)
     # delay(:run_every => 1.minutes ).scrape_hn
     # delay(:run_at => 1.minutes.from_now.getutc ).scrape_hn
     
