@@ -106,16 +106,18 @@ class Hn
     # puts "Scraped **********************************"
     puts "Scraped #{links.count} Links"
     # puts "Scraped **********************************"
-    
-    i = 0
-    while i < 30
-      rank = i + 1
-      key = "hn_link:" + rank.to_s
-      $redis.set(key, {:id => item_ids[i], :rank => rank, :title => titles[i], :link => links[i], 
-                       :points => points[i], :submitter => submitters[i],
-                       :comments => comments[i]
-                      }.to_json)
-      i += 1
+
+
+    30.times do |i|
+      $redis.set("hn_link:#{i+1}", {
+        :id => item_ids[i],
+        :rank => i+1,
+        :title => titles[i],
+        :link => links[i],
+        :points => points[i],
+        :submitter => submitters[i],
+        :comments => comments[i]
+      }.to_json)
     end
     
     # delay(:run_every => 1.minutes ).scrape_hn
