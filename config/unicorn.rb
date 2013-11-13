@@ -7,10 +7,10 @@ stderr_path "#{root}/log/unicorn.log"
 stdout_path "#{root}/log/unicorn.log"
 
 listen "/tmp/unicorn.hnapi.sock"
-worker_processes 3 # 2
+worker_processes 2
 timeout 30
 
-preload_app true
+# preload_app true
 
 # Force the bundler gemfile environment variable to
 # reference the capistrano "current" symlink
