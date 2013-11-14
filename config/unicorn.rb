@@ -1,12 +1,17 @@
 # config/unicorn.rb
 
-root = "/home/deployer/apps/hnapi/current"
-working_directory root
-pid "#{root}/tmp/pids/unicorn.pid"
-stderr_path "#{root}/log/unicorn.log"
-stdout_path "#{root}/log/unicorn.log"
+if Rails.env.production?
 
-listen "/tmp/unicorn.hnapi.sock"
+	root = "/home/deployer/apps/hnapi/current"
+	working_directory root
+	pid "#{root}/tmp/pids/unicorn.pid"
+	stderr_path "#{root}/log/unicorn.log"
+	stdout_path "#{root}/log/unicorn.log"
+	listen "/tmp/unicorn.hnapi.sock"
+	
+end
+
+
 worker_processes 2
 timeout 30
 

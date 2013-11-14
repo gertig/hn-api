@@ -1,5 +1,7 @@
 HnApi::Application.routes.draw do
 
+  resources :dogs
+
   api_version(:module => "v1", :header => {:name => "Accept", 
                                :value => "application/vnd.labs.gertig.com; version=1"}, 
                                :parameter => {:name => "version", :value => "v1"}) do
@@ -11,7 +13,7 @@ HnApi::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'dogs#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
