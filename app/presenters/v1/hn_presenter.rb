@@ -5,10 +5,7 @@ class V1::HnPresenter < V1::BasePresenter
   end
 
   def as_json(options={})
-    
-    $redis.keys
-
-    # @hn
+    @hn
     # {
     #   @hn
     # }
