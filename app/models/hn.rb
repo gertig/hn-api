@@ -8,7 +8,12 @@ class Hn
   # Gets the info from Redis
 
   def front_page
-    { fake: "response" }
+    # { fake: "response" }
+    if $redis
+      $redis.keys
+    else
+      { fake: "$redis does not exist" }
+    end
   end
 
   # def front_page
