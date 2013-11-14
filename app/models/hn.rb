@@ -7,29 +7,29 @@ class Hn
 
   # Gets the info from Redis
 
-  def front_page
-    # { fake: "response" }
-    if $redis
-      $redis.keys
-    else
-      { fake: "$redis does not exist" }
-    end
-  end
-
   # def front_page
-  #   page = []
-  #   i = 0
-  #   while i < 30
-  #     rank = i + 1
-  #     key = "hn_link:" + rank.to_s
-  #     if $redis.exists(key)
-  #       # puts "The REDIS get for key:#{key} is #{$redis.get(key)}"
-  #       page << JSON.parse($redis.get(key))
-  #     end
-  #     i += 1
+  #   # { fake: "response" }
+  #   if $redis
+  #     $redis.keys
+  #   else
+  #     { fake: "$redis does not exist" }
   #   end
-  #   page
   # end
+
+  def front_page
+    page = []
+    i = 0
+    while i < 30
+      rank = i + 1
+      key = "hn_link:" + rank.to_s
+      if $redis.exists(key)
+        # puts "The REDIS get for key:#{key} is #{$redis.get(key)}"
+        page << JSON.parse($redis.get(key))
+      end
+      i += 1
+    end
+    page
+  end
 
   
   def self.scrape(url)
