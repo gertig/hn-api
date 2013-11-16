@@ -7,7 +7,7 @@ gem 'sass-rails', '~> 4.0.0' # Use SCSS for stylesheets
 gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
 gem 'coffee-rails', '~> 4.0.0' # Use CoffeeScript for .js.coffee assets and views
 gem 'jquery-rails' # Use jquery as the JavaScript library
-
+gem 'thin'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'
 
@@ -35,6 +35,7 @@ group :development do
   gem "sextant" #rails/routes
   gem 'capistrano'
 	gem 'rvm-capistrano'
+  gem 'sqlite3'
 end
 
 # Scraping
