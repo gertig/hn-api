@@ -4,7 +4,7 @@ HnApi::Application.routes.draw do
                                :value => "application/vnd.labs.gertig.com; version=1"}, 
                                :parameter => {:name => "version", :value => "v1"}) do
 
-    match '/hn' => 'hn#index', :via => :get # /hn?version=v1 OR use the Accept header    
+    match '/api' => 'hn#index', :via => :get # /hn?version=v1 OR use the Accept header    
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
