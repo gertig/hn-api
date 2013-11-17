@@ -83,7 +83,7 @@ class Hn
           comment_path  = comment[:href]
           comment_count = comment.text.gsub("comments", "").strip!
           comment_url   = "https://news.ycombinator.com/#{comment_path}"
-          comments[index] = { url: comment_url, count: comment_count }
+          comments[index] = { url: comment_url, count: comment_count.to_i }
           # puts "Comment: #{comment_url}"
 
           params = CGI.parse(URI.parse(comment_url).query)
