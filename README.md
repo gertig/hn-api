@@ -8,7 +8,7 @@ $ gem install bunder
 
 $ gem install foreman
 
-Start Postgres (not actually using it so may remove it eventually. Unless we switch off of Redis to something like DJ)
+Start Postgres
 
 $ bundle
 
