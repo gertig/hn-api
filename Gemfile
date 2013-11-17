@@ -46,7 +46,8 @@ gem "redis", "~> 3.0.4" # "~> 2.2.2" # Add the following to config/application.r
 
 gem "twilio-ruby"
 
-gem "sidekiq", "~> 2.12.4"
+gem "sidekiq", "~> 2.15.0" #"~> 2.12.4"
+gem 'sidetiq', "~> 0.4.3" # Current has "0.3.1" installed
 
 # HTTP Requests
 # gem "faraday"
