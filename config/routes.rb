@@ -2,11 +2,11 @@ HnApi::Application.routes.draw do
 
   resources :dogs
 
-  api_version(:module => "v1", :header => {:name => "Accept", 
-                               :value => "application/vnd.labs.gertig.com; version=1"}, 
+  api_version(:module => "v1", :header => {:name => "Accept",
+                               :value => "application/vnd.labs.gertig.com; version=1"},
                                :parameter => {:name => "version", :value => "v1"}) do
 
-    match '/hn' => 'hn#index', :via => :get # /hn?version=v1 OR use the Accept header    
+    match '/api' => 'hn#index', :via => :get # /hn?version=v1 OR use the Accept header
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -49,7 +49,7 @@ HnApi::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
