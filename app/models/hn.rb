@@ -31,15 +31,19 @@ class Hn
     page
   end
 
-  
+  def last_updated
+    $redis.get('last_update').to_i || 0
+  end
+
+
   def self.scrape(url)
     return Nokogiri::HTML(open(url).read) #using .read on the open call returns properly encoded UTF-8 for special characters like &eacute;
   end
-  
+
   def self.is_too_short(str)
     return str.length <= 5
   end
-  
+
   def self.scrape_hn
     titles = []
     links = []
@@ -47,22 +51,22 @@ class Hn
     submitters = []
     comments = []
     item_ids = []
-    
+
     puts "SCRAAAAPE HN"
     @hn = scrape("https://news.ycombinator.com")
-    
+
     # @hn.css("td .subtext span").each_with_index do |item, index|
     #   if item[:id].include? "score_"
     #     point_count = item.text.gsub("points", "").strip!
     #     points[index] = point_count
     #   end
     # end
-    
+
     @hn.css("td .subtext").each_with_index do |item, index|
-      
+
       rank = index + 1
       # puts "Rank: #{rank}"
-      
+
       score = item.css("span").first
       if score
         if score[:id].include? "score_"
@@ -70,14 +74,14 @@ class Hn
           points[index] = point_count
           # puts "Points: #{point_count}"
         end
-      
+
         submitter = item.css("a").first
         if submitter[:href].include? "user"
           submitter_handle = submitter.text #.strip!
           submitters[index] = submitter_handle
           # puts "Submitter: #{submitter_handle}"
         end
-        
+
         comment = item.css("a").last
         if comment[:href].include? "item"
           comment_path  = comment[:href]
@@ -101,39 +105,42 @@ class Hn
     end # .css("td .subtext")
 
     puts "Scraped The Points, Submitters, and Comments"
-    
+
     # puts "Get Title"
     @hn.css("td .title a").each_with_index do |item, index|
       title = item.text #unless is_too_short(item.text)
       link = item[:href] # unless is_too_short(item.text)
       # puts "Title: #{title}"
       # puts "Link: #{link}"
-      
+
       titles[index] = title
       links[index] = link
     end
-    
+
     # puts "Scraped **********************************"
     puts "Scraped #{links.count} Links"
     # puts "Scraped **********************************"
-    
-    i = 0
-    while i < 30
-      rank = i + 1
-      key = "hn_link:" + rank.to_s
-      $redis.set(key, {:id => item_ids[i], :rank => rank, :title => titles[i], :link => links[i], 
-                       :points => points[i], :submitter => submitters[i],
-                       :comments => comments[i]
-                      }.to_json)
-      i += 1
+
+
+    30.times do |i|
+      $redis.set("hn_link:#{i+1}", {
+        :id => item_ids[i],
+        :rank => i+1,
+        :title => titles[i],
+        :link => links[i],
+        :points => points[i],
+        :submitter => submitters[i],
+        :comments => comments[i]
+      }.to_json)
     end
-    
+    $redis.set("last_update", Time.now.to_i)
+
     # delay(:run_every => 1.minutes ).scrape_hn
     # delay(:run_at => 1.minutes.from_now.getutc ).scrape_hn
-    
+
     return true
   end
 
-  
+
 
 end

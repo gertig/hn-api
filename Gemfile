@@ -35,6 +35,7 @@ group :development do
   gem "sextant" #rails/routes
   gem 'capistrano'
 	gem 'rvm-capistrano'
+  gem 'sqlite3'
 end
 
 # Scraping
