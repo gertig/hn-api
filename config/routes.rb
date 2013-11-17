@@ -7,6 +7,11 @@ HnApi::Application.routes.draw do
     match '/api' => 'hn#index', :via => :get # /hn?version=v1 OR use the Accept header    
   end
 
+  # By Default, we return an error.
+  api_version(:module => "v1", parameter: {name: "", value: ""}, :default => true) do
+    match '/api' => 'hn#error', :via => :get
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
