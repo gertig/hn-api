@@ -113,7 +113,7 @@ class Hn
       # puts "Title: #{title}"
       # puts "Link: #{link}"
 
-      titles[index] = title
+      titles[index] = title.strip
       links[index] = link
     end
 
