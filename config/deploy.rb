@@ -3,7 +3,7 @@ require "rvm/capistrano"
 require 'sidekiq/capistrano'
 
 # server "162.243.93.148", :web, :app, :db, primary: true
-server "162.243.93.148", :web, :app, :db, primary: true
+server "162.243.148.87", :web, :app, :db, primary: true
 
 set :application, "hnapi"
 set :user, "deployer"
