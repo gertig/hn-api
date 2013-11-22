@@ -10,8 +10,8 @@ class HnScraperWorker
 							}
 
   def perform(last_occurrence, current_occurrence)
-  	puts "Last Scraped: #{last_occurrence}"
-  	puts "Current Scraping: #{current_occurrence}"
+  	# puts "Last Scraped: #{last_occurrence}"
+  	# puts "Current Scraping: #{current_occurrence}"
 
     Hn.scrape_hn
   end
