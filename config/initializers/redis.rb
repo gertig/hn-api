@@ -2,7 +2,7 @@ require "net/http"
 require "uri"
 
 # REDIS_URL = ENV["REDISTOGO_URL"] 
-REDIS_URL = "redis://162.243.93.148:6379"
+REDIS_URL = "redis://localhost:6379"
 
 # puts "&&&&&&&&&$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
 # puts "REDS URL is = "
