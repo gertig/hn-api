@@ -1,3 +1,8 @@
+/*
+ image-url("avatar2.jpeg"); //image-url("image.png") is a sprockets helper, 
+ could also use asset-url("", image)
+ */
+
 /* Write your CSS! */
 * {
   box-sizing: border-box; }
@@ -12,7 +17,7 @@ html {
     clear: both; }
 
 body {
-  background: url(../noise.png), radial-gradient(#fafaf9, #cdcccd);
+  background: image-url("noise.png"), radial-gradient(#fafaf9, #cdcccd);
   border-top: 0px solid #555;
   max-width: 1600px;
   margin: 0 auto;
@@ -26,7 +31,7 @@ body {
   min-height: 750px; }
 
 .air {
-  background: url(../air.png) no-repeat;
+  background: image-url("air.png") no-repeat;
   background-position: right 0;
   background-size: 900px;
   margin-right: 45%;
@@ -47,7 +52,7 @@ body {
   padding-left: 110px;
   padding-top: 2px;
   height: 90px;
-  background: url(../logo.png) top left no-repeat;
+  background: image-url("logo.png") top left no-repeat;
   background-size: 90px;
   margin-bottom: 40px; }
 
@@ -91,7 +96,7 @@ a.store {
   font-size: 18px;
   text-decoration: none;
   line-height: 1.1;
-  background: url(../apple.png) 15px 8px no-repeat, linear-gradient(white, #f4f4f4);
+  background: image-url("apple.png") 15px 8px no-repeat, linear-gradient(white, #f4f4f4);
   background-size: 38px, 100%;
   border-radius: 6px;
   padding: 10px 15px 10px 70px;
@@ -99,7 +104,7 @@ a.store {
   a.store span {
     font-size: 21px; }
   a.store:hover {
-    background: url(../apple.png) 15px 8px no-repeat, linear-gradient(white, white);
+    background: image-url("apple.png") 15px 8px no-repeat, linear-gradient(white, white);
     background-size: 38px, 100%;
     border: 1px solid rgba(0, 0, 0, 0.3);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); }
@@ -126,18 +131,18 @@ a.store {
 
 .facebook a {
   padding: 8px 14px 8px 36px;
-  background: url(../facebook.png) 14px 9px no-repeat;
+  background: image-url("facebook.png") 14px 9px no-repeat;
   background-size: 10px; }
 
 .twitter a {
   padding: 8px 14px 8px 44px;
-  background: url(../twitter.png) 12px 11px no-repeat;
+  background: image-url("twitter.png") 12px 11px no-repeat;
   background-size: 22px; }
 
 footer {
   display: block;
   height: 100px;
-  background: url(../noise.png), linear-gradient(#555555, #555555);
+  background: image-url("noise.png"), linear-gradient(#555555, #555555);
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   color: #CDCCCD;
   font-weight: 400;
@@ -274,33 +279,33 @@ footer {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
   body {
-    background-image: url(../noise@2x.png);
+    background-image: image-url("noise@2x.png");
   }
   .air {
-    background-image: url(../air@2x.png);
+    background-image: image-url("air@2x.png");
   }
   .title {
-    background: url(../logo@2x.png) top left no-repeat;
+    background: image-url("logo@2x.png") top left no-repeat;
     background-size: 90px;
   }
   a.store {
-    background: url(../apple@2x.png) 15px 8px no-repeat, linear-gradient(white, #f4f4f4);
+    background: image-url("apple@2x.png") 15px 8px no-repeat, linear-gradient(white, #f4f4f4);
     background-size: 32px, 100%;
   }
   a.store:hover {
-    background: url(../apple@2x.png) 15px 8px no-repeat, linear-gradient(white, white);
+    background: image-url("apple@2x.png") 15px 8px no-repeat, linear-gradient(white, white);
     background-size: 32px, 100%;
   }
   .facebook a {
-    background: url(../facebook@2x.png) 14px 9px no-repeat;
+    background: image-url("facebook@2x.png") 14px 9px no-repeat;
     background-size: 10px;
   }
   .twitter a {
-    background: url(../twitter@2x.png) 12px 11px no-repeat;
+    background: image-url("twitter@2x.png") 12px 11px no-repeat;
     background-size: 22px;
   }
   footer {
-    background: url(../noise@2x.png), linear-gradient(#555555, #555555);
+    background: image-url("noise@2x.png"), linear-gradient(#555555, #555555);
   }
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 740px) {

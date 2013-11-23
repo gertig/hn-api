@@ -1,5 +1,6 @@
 HnApi::Application.routes.draw do
 
+  # get "home/index"
   api_version(:module => "v1", :header => {:name => "Accept", 
                                :value => "application/com.mohawkapps.hacker-bar; version=1"}, 
                                :parameter => {:name => "version", :value => "v1"}) do
@@ -16,7 +17,7 @@ HnApi::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'dogs#index'
+  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

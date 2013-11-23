@@ -12,4 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require retina-1.1.0.min
+
+
+//\\ \\// require_tree .
