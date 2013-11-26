@@ -1,5 +1,5 @@
 /*
- image-url("avatar2.jpeg"); //image-url("image.png") is a sprockets helper, 
+ image-url("avatar2.jpeg"); //image-url("image.png") is a sprockets helper,
  could also use asset-url("", image)
  */
 
@@ -141,15 +141,18 @@ a.store {
 
 footer {
   display: block;
-  height: 100px;
   background: image-url("noise.png"), linear-gradient(#555555, #555555);
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   color: #CDCCCD;
   font-weight: 400;
   text-align: center;
-  padding-top: 30px;
+  padding-top: 10px;
   font-size: 13px;
   font-family: 'Open Sans', sans-serif; }
+  footer .footer-links a {
+    font-size: 14px; }
+  footer .footer-credits {
+    padding:20px 0px 10px 0px; }
   footer a {
     font-size: 21px;
     color: #CDCCCD;
