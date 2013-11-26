@@ -143,6 +143,7 @@ footer {
   background: image-url("noise.png"), linear-gradient(#555555, #555555);
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   color: #CDCCCD;
+  z-index:900;
   font-weight: 400;
   text-align: center;
   font-size: 13px;
