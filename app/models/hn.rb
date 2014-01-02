@@ -107,7 +107,7 @@ class Hn
     puts "Scraped The Points, Submitters, and Comments"
 
     # puts "Get Title"
-    @hn.css("td .title a").each_with_index do |item, index|
+    @hn.css("td .title a:first").each_with_index do |item, index|
       title = item.text #unless is_too_short(item.text)
       link = item[:href] # unless is_too_short(item.text)
       # puts "Title: #{title}"
